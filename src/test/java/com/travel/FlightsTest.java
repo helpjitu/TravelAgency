@@ -15,7 +15,7 @@ public class FlightsTest extends Base {
 		String id = new HomePage().clickDestinationLink().clickWorldLink().setDepartureCity("Rome")
 				.setDestinationCity("Dublin").clickFindFlights().chooseThisFlight(new ReservePage().getMinimumPrice())
 				.clickPurchaseFlightBtn().getPaymentId();
-		System.out.println(id);
+		logInfo("Payment ID: "+id);
 		tearDown();
 	}
 }
