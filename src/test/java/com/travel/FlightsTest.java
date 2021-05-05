@@ -9,15 +9,15 @@ import com.pages.HomePage;
 import com.pages.ReservePage;
 
 public class FlightsTest extends Base {
-	@Parameters({ "departureCity", "destinationCity","browser" })
+	@Parameters({ "browser", "departureCity", "destinationCity" })
 	@Test
 	public void purchageFlight(String browser, String departureCity, String destinationCity) {
 		Driver.initDriver(browser);
 		openUrl();
 		String id = new HomePage().clickDestinationLink().clickWorldLink().setDepartureCity(departureCity)
-				.setDestinationCity(destinationCity).clickFindFlights().chooseThisFlight(new ReservePage().getMinimumPrice())
-				.clickPurchaseFlightBtn().getPaymentId();
-		logInfo("Payment ID: "+id);
+				.setDestinationCity(destinationCity).clickFindFlights()
+				.chooseThisFlight(new ReservePage().getMinimumPrice()).clickPurchaseFlightBtn().getPaymentId();
+		logInfo("Payment ID: " + id);
 		tearDown();
 	}
 }
