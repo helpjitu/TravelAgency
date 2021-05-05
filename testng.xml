@@ -21,6 +21,9 @@
 	</test>
 
 	<test name="Simple Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="departureCity" value="Portland"></parameter>
+		<parameter name="destinationCity" value="Cairo"></parameter>
 		<classes>
 			<class name="com.travel.FlightsTest"></class>
 		</classes>
