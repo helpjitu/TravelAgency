@@ -13,6 +13,8 @@ public final class ReservePage {
 
 	private final By price = By.xpath("//tbody/tr/td[6]");
 //	private final By selectFlight = By.xpath("//tbody/tr/td[1]/input[1]");
+	private final String selectFlightButton1 = "//td[contains(text(),'";
+	private final String selectFlightButton2 = "')]//preceding-sibling::td//input";
 
 	public Double getMinimumPrice() {
 		List<WebElement> price1 = DriverManager.getDriver().findElements(price);
@@ -25,7 +27,7 @@ public final class ReservePage {
 	}
 
 	public PurchasePage chooseThisFlight(Double minPrice) {
-		String chooseThisFlightButton = "//td[contains(text(),'" + minPrice + "')]//preceding-sibling::td//input";
+		String chooseThisFlightButton = selectFlightButton1 + minPrice + selectFlightButton2;
 		DriverManager.getDriver().findElement(By.xpath(chooseThisFlightButton)).click();
 		return new PurchasePage();
 	}

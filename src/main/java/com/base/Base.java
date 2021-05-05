@@ -10,18 +10,7 @@ import com.extent.ExtentTestManager;
 
 public class Base {
 
-	/*
-	 * public static void initBrowser(String browser) { if
-	 * (browser.equalsIgnoreCase("chrome")) {
-	 * System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")
-	 * + "/src/test/resources/driver/chromedriver.exe"); driver = new
-	 * ChromeDriver(); } else if (browser.equalsIgnoreCase("edge")) {
-	 * System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") +
-	 * "/src/test/resources/driver/msedgedriver.exe"); driver = new EdgeDriver(); }
-	 * driver.manage().window().maximize();
-	 * 
-	 * }
-	 */
+
 	public static void openUrl() {
 		DriverManager.getDriver().get("https://blazedemo.com/index.php");
 	}
